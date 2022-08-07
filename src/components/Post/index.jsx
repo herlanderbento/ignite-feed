@@ -40,8 +40,15 @@ export function Post({ author, publishedAt, content }) {
     setNewCommentText('')
   }
 
-  function deleteComment(comment) {
-    console.log(`Deletar comentário ${comment}`)
+  function deleteComment(commentToDelete) {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete
+    })
+    setComments(commentsWithoutDeletedOne)
+  }
+
+  function handleMewCommentInvalid(){
+
   }
 
   return (
@@ -89,6 +96,8 @@ export function Post({ author, publishedAt, content }) {
           placeholder="Deixe um comentário"
           value={newCommentText}
           onChange={handleNewCommentChange}
+          onInvalid={handleMewCommentInvalid}
+          required
         />
 
         <footer>

@@ -26,7 +26,7 @@ export function Comment({ content, onDeleteComment }) {
               </time>            
             </div>
 
-            <button>
+            <button  onClick={handleDeleteComment}>
               <Trash size={24}/>
             </button>
           </header>
@@ -35,7 +35,7 @@ export function Comment({ content, onDeleteComment }) {
         </div>
 
         <footer>
-          <button onClick={handleDeleteComment}>
+          <button>
             <ThumbsUp/>
             Aplaudir <span>20</span>
           </button>
